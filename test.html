@@ -7,60 +7,17 @@
 
 <script type="text/javascript">
 
-    // function uploadImgPreview(){
-    //     const toDataURL = url => fetch(url)
-    //         .then(response => response.blob())
-    //         .then(blob => new Promise((resolve, reject) => {
-    //             const reader = new FileReader()
-    //             reader.onloadend = () => resolve(reader.result)
-    //             reader.onerror = reject
-    //             reader.readAsDataURL(blob)
-    //         }))
 
-    //     return (
-    //         toDataURL('items/sample_image.png')
-    //         .then(dataUrl => {
-    //             return dataUrl.split(',')[1];
-    //         })
-    //     )
-
-    //     // return dataUrl.split(',')[1];
-    // }
-
-    function uploadImgPreview(){
-
-        // return dataUrl.split(',')[1];
-    }
-    function run(){
-        const toDataURL = url => fetch(url)
-            .then(response => response.blob())
-            .then(blob => new Promise((resolve, reject) => {
-                const reader = new FileReader()
-                reader.onloadend = () => resolve(reader.result)
-                reader.onerror = reject
-                reader.readAsDataURL(blob)
-            }))
-
-
-        const url = 'items/sample_image.png';
-        const data = toDataURL(url)
-        console.log(data)
-
-        const userAction = async () => {
-            const response = await fetch("http://keti.asuscomm.com:32222/function/imagestress", {
-                method: 'POST',
-                body: data, // string or object
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            const myJson = await response.json(); //extract JSON from the http response
-            console.log(myJson)
-            // do something with myJson
-        }
-    }
 
 </script>
+
+<style>
+    .object-rectangle {
+    position: absolute;
+    border: solid 3px #ba0b93;
+    z-index: 99;
+}
+</style>
 
 </head>
 
@@ -68,6 +25,16 @@
 
     <!-- @breif accept 태그는 파일 업로드시 그것을 이미지 파일로 제한한다. -->
 
+    <div class="demo-img-container">
+        <img src="items/sample_image.png" width="100%" height="100%"/>
+        <div class="object-rectangle" style="top: 0px; left: 50%; width: 10px; height: 10p;">
+            <table class="table-naked object-info">
+                <tbody><tr>
+                    <td>person</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
     <button onclick="run();">run</button>
 
     <hr/>
