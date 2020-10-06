@@ -166,3 +166,20 @@ div.row .items {
     margin-top: 12px;
 }
 */
+
+.image_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 1000px;
+}
+
+input.img-button {
+  background: url("items/sample_image.png") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border: none;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
