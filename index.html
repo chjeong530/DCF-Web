@@ -5,78 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <script src="index.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Document</title>
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <div class="nav_tbox">
-        <div class="nav_tbox_text" >상단 메뉴</div>
-      </div>
-      </button>
-    </nav>
-  </header>
-
-  <item class="row items">
-    <div class="column preview">
-      <div class="demo-img-container">
-        <img src="items/sample_image.png" class="image" />
-      </div>
+  <div class="header">
+    <div class="tab_wrap">
+      <div class="tab_menu_container">
+        <button class="tab_menu_btn on" type="button">채치수</button>
+        <button class="tab_menu_btn" type="button">강백호</button>
+        <button class="tab_menu_btn" type="button">서태웅</button>
+        <button class="tab_menu_btn" type="button">송태섭</button>
+        <button class="tab_menu_btn" type="button">정대만</button>
+        <button class="tab_menu_btn" type="button">권준호</button>
+        <button class="tab_menu_btn" type="button">양호열</button>
+      </div> <!-- tab_menu_container e -->
     </div>
-
-    <div class="column preview">
-      <div class="demo-img-results">
-        <table class="no-boader" class="table">
-          <thead>
-            <tr>
-              <th class="th-1"> 기능 이름: </th>
-              <th> value </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-            <tr>
-              <th> 개체 </th> 
-              <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </item>
+  </div>
 
 
-  <item class="row list">
-    <div class="image_list">
-      <div class="crop_image">
-        <input type="button" class="img-button">
-      </div>
-    </div>
+  <div class="tab_box_container">
+    <div class="tab_box on"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>br><br>고릴라 주장</div>
+    <div class="tab_box">빨간 원숭이</div>
+    <div class="tab_box">농구천재</div>
+    <div class="tab_box">북산의 돌격대장</div>
+    <div class="tab_box">돌아온 풍운아</div>
+    <div class="tab_box">식스맨</div>
+    <div class="tab_box">사실 작중 제일 멋쟁이</div>
 
-  </item>
+      <!-- <item class="row items">
+        <div class="column preview">
+          <div class="demo-img-container">
+            <img src="items/sample_image.png" class="image" />
+          </div>
+        </div>
 
-  <footer class="footer">
+        <div class="column preview">
+          <div class="demo-img-results">
+            <table class="no-boader" class="table">
+              <thead>
+                <tr>
+                  <th class="th-1"> 기능 이름: </th>
+                  <th> value </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+                <tr>
+                  <th> 개체 </th> 
+                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </item>
+
+
+      <item class="row list">
+        <div class="image_list">
+          <div class="crop_image">
+            <input type="button" class="img-button">
+          </div>
+          <div class="crop_image">
+            <input type="button" class="nothing">
+          </div>
+        </div>
+
+      </item>
+    </div> -->
+
+  </div>
+
+
+
+
+  <div class="footer">
     <div class="footer_logo">nothing</div>
-  </footer>
+  </div>
 
   
 </body>
