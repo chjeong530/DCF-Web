@@ -73,3 +73,54 @@ class StickyNavigation {
 }
 
 new StickyNavigation();
+
+$(document).ready(function(){
+    document.getElementById("readme").innerHTML='<iframe src="readme/stress.html" width="80%"></iframe>';
+})
+
+function run(){
+	const toDataURL = url => fetch(url)
+	  .then(response => response.blob())
+	  .then(blob => new Promise((resolve, reject) => {
+		const reader = new FileReader()
+		reader.onloadend = () => resolve(reader.result)
+		reader.onerror = reject
+		reader.readAsDataURL(blob)
+	  }))
+  
+  
+	const url = 'images/sample_image.png';
+	const data = toDataURL(url)
+	.then( dataUrl => {
+	  const body_data = {
+		"access_token" : "",
+		"image" : dataUrl.split(',')[1]
+	  }
+	  const json_data = {
+		method: 'POST',
+		body: body_data, // string or object
+	  }
+  
+	  console.log(json_data)
+	//   const response = fetch("http://keti.asuscomm.com:32222/function/yonsei-imagestressrecognition-5", {
+	  const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
+		method: 'POST',
+		body: JSON.stringify(body_data), // string or object
+	  })
+	  .then((res) => res.json())
+	  .then((data) => {
+		  console.log(data["return_stress"])
+
+		  document.getElementById("result_value").innerHTML=JSON.stringify(data["return_stress"]);
+		})
+	//   .then((res) => {
+
+	// 	// document.getElementById("readme").innerHTML='<iframe src="readme/stress.html" width="80%"></iframe>';
+	// 	console.log(res.json())
+	//   }
+	//   )
+	  // do something with myJson
+	});
+  }
+
+run();

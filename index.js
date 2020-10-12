@@ -22,7 +22,7 @@ function run(){
     }))
 
 
-  const url = 'items/sample_image.png';
+  const url = 'images/sample_image.png';
   const data = toDataURL(url)
   .then( dataUrl => {
     const body_data = {

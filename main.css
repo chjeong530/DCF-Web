@@ -6,13 +6,67 @@ a {
     text-decoration: none;
 }
 
-.et-hero-tabs,
+
+#menu-wrapper
+{
+	background: #fff;
+}
+
+#menu {
+	overflow: hidden;
+	height: 100px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu a {
+	display: block;
+	letter-spacing: 1px;
+	padding: 0px 40px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.80em;
+	line-height: 100px;
+	border: none;
+	color: #000;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	text-decoration: none;
+}
+
+#menu .current_page_item a {
+	background: rgba(102, 177, 241, 0.8);
+}
+
+.et-hero-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    position: relative;
+    background: #eee;
+    text-align: center;
+    padding: 0 2em;
+}
 .et-slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
     background: #eee;
     text-align: center;
@@ -33,13 +87,19 @@ a {
     opacity: 0.6;
 }
 
+.et-slide div {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    width: 100%;
+}
+
 .et-hero-tabs-container {
     display: flex;
     flex-direction: row;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 70px;
+    height: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background: #fff;
     z-index: 10;
@@ -89,3 +149,170 @@ a {
         font-size: 1rem;
     }
 }
+
+iframe {
+    width: 80%;
+    height: 100vh;
+    border: none;
+}
+
+.items {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.image_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 1000px;
+}
+
+input.img-button {
+}
+
+#img1 {
+  background: url("images/sample_image.png") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+#img2 {
+  background: url("images/1.jpg") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+#img3 {
+  background: url("images/2.jpg") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+#img4 {
+  background: url("images/no_image.png") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 48em){
+    .preview{
+        width: 50%;
+    }
+  
+    .items{
+      flex-direction: row;
+    }
+  }
+  
+  
+  .demo-img-container {
+    width: 100%;
+    /* height: 50%; */
+  }
+  
+  .demo-img-results {
+    height: 400px;
+    overflow: auto;
+    width: 100%;
+    background-color: #f4f5f6;
+    border: 1px #747479 solid;
+  }
+  
+  table {
+    display: table;
+    background-color: #fff;
+    border-collapse: separate;
+    border-spacing: 1px 1rem;
+    border-top: 2px solid #eaebec;
+    margin: 12px 0;
+    width: 100%;
+  }
+
+  tr {
+      padding: 20px;
+  }
+  
+  th {
+    display: table-cell;
+    word-break: break-all;
+  }
+  
+  .th-1 {
+    width: 100px;
+  }
+
+  #result_value {
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: lighter;
+  }
+  
+  .demo-img-container {
+    max-width: 600px;
+    height: auto;
+    border: 0;
+  }
+  
+  .demo-img-results {
+    max-width: 600px;
+    height: 360px;
+    background-color: #f4f5f6;
+  }
+  
+  .image {
+    max-width: 100%;
+  }
+  
+  table {
+    background-color: #f4f5f6;
+    border: 1px;
+    border-color: #a8a8ab;
+  }
+  
+  .table {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .table tbody{
+    overflow-y: auto;
+  }
+  
+  .column {
+    float: left;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+  }
+  
+  .row {
+    max-width: none;
+    margin-left: -.9375rem;
+    margin-right: -.9375rem;
+  }

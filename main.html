@@ -9,7 +9,18 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <div id="menu-wrapper">
+		<div class="container" id="menu" >
+			<ul>
+				<li class="current_page_item"><a href="#">Homepage</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+		<!-- end #menu --> 
+	</div> 
   <!-- Hero -->
   <section class="et-hero-tabs">
     <h1>STICKY SLIDER NAV</h1>
@@ -17,9 +28,9 @@
     <div class="et-hero-tabs-container">
       <a class="et-hero-tab" href="#tab-es6">ES6</a>
       <a class="et-hero-tab" href="#tab-flexbox">Flexbox</a>
-      <a class="et-hero-tab" href="#tab-react">React</a>
+      <!-- <a class="et-hero-tab" href="#tab-react">React</a>
       <a class="et-hero-tab" href="#tab-angular">Angular</a>
-      <a class="et-hero-tab" href="#tab-other">Other</a>
+      <a class="et-hero-tab" href="#tab-other">Other</a> -->
       <span class="et-hero-tab-slider"></span>
     </div>
   </section>
@@ -29,12 +40,53 @@
     <section class="et-slide" id="tab-es6">
       <h1>ES6</h1>
       <h3>something about es6</h3>
+      <div id="readme"></div>
     </section>
     <section class="et-slide" id="tab-flexbox">
       <h1>Flexbox</h1>
       <h3>something about flexbox</h3>
+      <item class="row items">
+        <div class="column preview">
+          <div class="demo-img-container">
+            <img src="images/sample_image.png" class="image" />
+          </div>
+        </div>
+
+        <div class="column preview">
+          <div class="demo-img-results">
+            <table class="no-boader" class="table">
+              <thead>
+                <tr>
+                  <th class="th-1"> 기능 </th>
+                  <th> 값 </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th id=> 결과  </th> 
+                  <th id=result_value>  </th> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </item>
+
+      <item class="row list">
+        <div class="image_list">
+          <div class="crop_image">
+            <input type="button" class="img-button" id="img1" onclick="">
+          </div>
+          <div class="crop_image">
+            <input type="button" class="img-button" id="img2">
+          </div>
+          <div class="crop_image">
+            <input type="button" class="img-button" id="img3">
+          </div>
+        </div>
+      </item>
     </section>
-    <section class="et-slide" id="tab-react">
+    <!-- <section class="et-slide" id="tab-react">
       <h1>React</h1>
       <h3>something about react</h3>
     </section>
@@ -45,7 +97,7 @@
     <section class="et-slide" id="tab-other">
       <h1>Other</h1>
       <h3>something about other</h3>
-    </section>
+    </section> -->
   </main>
 
 </body>
