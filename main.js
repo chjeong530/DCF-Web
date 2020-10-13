@@ -78,7 +78,7 @@ $(document).ready(function(){
     document.getElementById("readme").innerHTML='<iframe src="readme/stress.html" width="80%"></iframe>';
 })
 
-function run(){
+function run(filename){
 	const toDataURL = url => fetch(url)
 	  .then(response => response.blob())
 	  .then(blob => new Promise((resolve, reject) => {
@@ -89,7 +89,10 @@ function run(){
 	  }))
   
   
-	const url = 'images/sample_image.png';
+	const url = 'images/'+filename;
+	console.log("url")
+	console.log(url)
+
 	const data = toDataURL(url)
 	.then( dataUrl => {
 	  const body_data = {
@@ -109,9 +112,18 @@ function run(){
 	  })
 	  .then((res) => res.json())
 	  .then((data) => {
-		  console.log(data["return_stress"])
-
-		  document.getElementById("result_value").innerHTML=JSON.stringify(data["return_stress"]);
+		  $("#result_value").text(JSON.stringify(data["return_stress"]));
+		  return data["return_stress"]
+		})
+		.then((data) => {
+		  $("#rect").append('<div class="object-rectangle" style="top:22.5%; left:13%; width:10%; height:10%;"></div>');
+		console.log(data["xmax"])
+		console.log(data["xmin"])
+		console.log(data["ymax"])
+		console.log(data["ymin"])
+		})
+		.then(url => {
+			$(".image").attr("src", "images/"+filename);
 		})
 	//   .then((res) => {
 
@@ -123,4 +135,65 @@ function run(){
 	});
   }
 
-run();
+function run_url(img_url){
+  
+	const dataUrl = img_url;
+	console.log("url")
+	console.log(dataUrl)
+
+	const body_data = {
+	"access_token" : "",
+	"image" : dataUrl.split(',')[1]
+	}
+	const json_data = {
+	method: 'POST',
+	body: body_data, // string or object
+	}
+
+	console.log(json_data)
+	const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
+	method: 'POST',
+	body: JSON.stringify(body_data), // string or object
+	})
+	.then((res) => res.json())
+	.then((data) => {
+		$("#result_value").text(JSON.stringify(data["return_stress"]));
+	})
+	.then((data) => {
+
+		console.log(data["return_stress"]["xmax"])
+		console.log(data["return_stress"]["xmin"])
+		console.log(data["return_stress"]["ymax"])
+		console.log(data["return_stress"]["ymin"])
+	})
+
+	console.log(dataUrl);
+	$(".image").attr("src", dataUrl);
+}
+
+$(".img-button").click(function(){
+	const id = $(this).attr("id");
+	var filename = "";
+	if(id === "img1"){
+		filename = "sample_image.png";
+	}
+	else if(id === "img2"){
+		filename = "1.jpg";
+	}
+	else if(id === "img3"){
+		filename = "2.jpg";
+	}
+	run(filename);
+})
+
+
+$(".img-url-button").click(function(){
+	const val= $("#img-url").val()
+	run_url(val);
+})
+
+function drawRect(x, y, w, h){
+	const container = document.querySelector('.items');
+	// container.innerHTML = 
+}
+

@@ -6,6 +6,46 @@ a {
     text-decoration: none;
 }
 
+div.header {
+    display:table;
+    width:100%;
+    max-width:100%;
+}
+
+div.title {
+    display:table-row;
+    line-height:1.5em;
+    font-size:2em;
+    white-space:nowrap;
+}
+
+.spacer h1 {
+    font-size:inherit; /* Change font-size in header */
+    overflow:hidden;
+    display:table-cell;
+    vertical-align:middle;
+    width:1px;
+    table-layout:fixed;
+    padding:15px 10px;
+
+}
+
+span.spacer {
+    display:table-cell;
+}
+
+span.spacer:after {
+    display:inline-block;
+    width:100%;
+    content:".";
+    font-size:0;
+    color:transparent;
+    height:2px;
+    background:#000;
+    vertical-align:middle;
+    position:relative;
+    top:-1px;
+}
 
 #menu-wrapper
 {
@@ -99,7 +139,7 @@ a {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40px;
+    height: 60px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background: #fff;
     z-index: 10;
@@ -152,7 +192,7 @@ a {
 
 iframe {
     width: 80%;
-    height: 100vh;
+    height: 200vh;
     border: none;
 }
 
@@ -169,7 +209,10 @@ iframe {
   width: 1000px;
 }
 
-input.img-button {
+.object-rectangle {
+    position: absolute;
+    border: solid 3px #ba0b93;
+    z-index: 99;
 }
 
 #img1 {
@@ -241,16 +284,15 @@ input.img-button {
     height: 400px;
     overflow: auto;
     width: 100%;
-    background-color: #f4f5f6;
+    /* background-color: #f4f5f6; */
+    background-color: #eee;
     border: 1px #747479 solid;
   }
   
   table {
     display: table;
-    background-color: #fff;
     border-collapse: separate;
     border-spacing: 1px 1rem;
-    border-top: 2px solid #eaebec;
     margin: 12px 0;
     width: 100%;
   }
@@ -258,14 +300,20 @@ input.img-button {
   tr {
       padding: 20px;
   }
-  
   th {
     display: table-cell;
     word-break: break-all;
+    vertical-align: top;
   }
-  
+
   .th-1 {
+    border-bottom: 2px solid #eaebec;
+    padding-bottom: 10px;
     width: 100px;
+  }
+  .th-2 {
+    border-bottom: 2px solid #eaebec;
+    padding-bottom: 10px;
   }
 
   #result_value {
@@ -288,12 +336,6 @@ input.img-button {
   
   .image {
     max-width: 100%;
-  }
-  
-  table {
-    background-color: #f4f5f6;
-    border: 1px;
-    border-color: #a8a8ab;
   }
   
   .table {
