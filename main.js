@@ -116,7 +116,19 @@ function run(filename){
 		  return data["return_stress"]
 		})
 		.then((data) => {
-		  $("#rect").append('<div class="object-rectangle" style="top:22.5%; left:13%; width:10%; height:10%;"></div>');
+			var divEl = $("#image");
+			var divX = divEl.offset().left;
+			var divY = divEl.offset().top;
+			var divW = divEl.width();
+			var divH = divEl.height();
+		console.log(divX);
+		console.log(divY);
+		console.log(divW);
+		console.log(divH);
+
+
+		//   $("#rect").append('<div class="object-rectangle" style="position: static; top:1889.5px; left:237.5px; width:10%; height:10%;"></div>');
+		//   $("#rect").append(`<div class="object-rectangle" style="top:$('divY')px; left:$('divX')px; width:$('divW')px; height:$('divH')px;"></div>`);
 		console.log(data["xmax"])
 		console.log(data["xmin"])
 		console.log(data["ymax"])
