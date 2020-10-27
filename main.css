@@ -1,5 +1,17 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 body {
-    font-family: "Century Gothic", 'Lato', sans-serif;
+
+  font-family: 'Nanum Gothic';
+}
+
+p {
+    /* font-family: "Century Gothic", 'Lato', sans-serif; */
+  font-family: 'Nanum Gothic';
+  }
+
+span, code {
+  font-family: 'snas-serif';
 }
 
 a {
@@ -318,8 +330,8 @@ iframe {
 
   #result_value {
       text-align: left;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: lighter;
+      /* font-family: 'Times New Roman', Times, serif; */
+      /* font-weight: lighter; */
   }
   
   .demo-img-container {
@@ -358,3 +370,12 @@ iframe {
     margin-left: -.9375rem;
     margin-right: -.9375rem;
   }
+
+.readme-image {
+  width: 50%;
+}
+
+#readme {
+  text-align: left;
+}
+

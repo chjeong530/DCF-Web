@@ -2,12 +2,12 @@
 <p>연세대학교에서 제공하는 OpenAPI이며, 사람 얼굴이 포함되어 있는 이미지를 입력으로 스트레스 인식 알고리즘이 예측한 사람의 스트레스 수준을 결과로 반환해주는 API입니다. 스트레스 수준은 스트레스 없음, 스트레스 약함, 스트레스 강함의 3단계로 구성되어 있습니다.</p>
 <h2 id="-image-based-stress-recognition-">영상기반 스트레스 인식(Image Based Stress Recognition) 알고리즘이란?</h2>
 <p>아래 그림과 같이 이미지에서 (1). 사람 얼굴(Face)을 검출하고, (2). 이미지 내 검출된 사람 얼굴의 스트레스 수준이 어느 정도인지를 인식(Recognition)하는 알고리즘입니다.</p>
-<p><img src="images/stress_recognition.png" alt="Object Detection"></p>
+<p><img src="images/stress_recognition.png" alt="Object Detection" class="readme-image"></p>
 <h2 id="-api-">영상기반 스트레스 인식 API 사용</h2>
 <h3 id="-api-">영상기반 스트레스 인식 API 호출</h3>
 <p>영상기반 스트레스 인식 API의 호출은 API를 서비스하는 서버 주소와 객체 검출을 위한 인자 값이 필요하며, 샘플 이미지를 활용하여 API 호출하는 예는 다음과 같습니다.</p>
 <p><strong>(샘플 이미지 - sample_image.png)</strong></p>
-<p><img src="images/sample_image.png" alt="Sample Image"></p>
+<p><img src="images/sample_image.png" alt="Sample Image" class="readme-image"></p>
 <p><strong>(영상기반 스트레스 인식 API 호출 예)</strong></p>
 <pre><code>echo '{<span class="hljs-string">"access_token"</span>: [<span class="hljs-keyword">USER</span> <span class="hljs-title">ACCESS</span> TOKEN], <span class="hljs-string">"image"</span>: <span class="hljs-string">"'"</span>$(base64 
 sample_image.png)<span class="hljs-string">"'"</span>}' | curl -X POST -d @- 
@@ -108,4 +108,4 @@ sample_image.png)<span class="hljs-string">"'"</span>}' | curl -X POST -d @-
 draw.rectangle([(xmin, ymin), (xmax, ymax)], <span class="hljs-attr">outline="red")</span>
 img.show()
 </code></pre><p><strong>(실행 결과)</strong></p>
-<p><img src="images/face_detection.png" alt="face_detection"></p>
+<p><img src="images/face_detection.png" alt="face_detection" class="readme-image"></p>
