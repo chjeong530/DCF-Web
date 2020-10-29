@@ -11,7 +11,8 @@ p {
   }
 
 span, code {
-  font-family: 'snas-serif';
+  /* font-family: 'snas-serif'; */
+  font-family: 'Times New Roman', Times, serif;
 }
 
 a {
@@ -129,7 +130,7 @@ span.spacer:after {
 .et-slide h1 {
     font-size: 2rem;
     margin: 0;
-    letter-spacing: 1rem;
+    /* letter-spacing: 1rem; */
 }
 
 .et-hero-tabs h3,
@@ -141,7 +142,7 @@ span.spacer:after {
 
 .et-slide div {
     font-size: 1rem;
-    letter-spacing: 0.3rem;
+    /* letter-spacing: 0.3rem; */
     width: 100%;
 }
 

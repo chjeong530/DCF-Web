@@ -71,27 +71,27 @@ conatiner.innerHTML=
       </div>
         <div class="image_url">
           <input type="text" id="img-url">
-          <input type="button" class="img-url-button" value="보내기">
+          <input type="button" class="img-url-button-emotion" value="보내기">
         </div>
 
         <div class="image_list">
           <div class="crop_image">
-            <input type="button" class="img-button" id="img1">
+            <input type="button" class="img-button-emotion" id="img1">
           </div>
           <div class="crop_image">
-            <input type="button" class="img-button" id="img2">
+            <input type="button" class="img-button-emotion" id="img2">
           </div>
           <div class="crop_image">
-            <input type="button" class="img-button" id="img3">
+            <input type="button" class="img-button-emotion" id="img3">
           </div>
           <div class="crop_image">
-            <input type="button" class="img-button" id="img4">
+            <input type="button" class="img-button-emotion" id="img4">
           </div>
           <div class="crop_image">
-            <input type="button" class="img-button" id="img4">
+            <input type="button" class="img-button-emotion" id="img4">
           </div>
           <div class="crop_image">
-            <input type="button" class="img-button" id="img4">
+            <input type="button" class="img-button-emotion" id="img4">
           </div>
         </div>
       </item>
@@ -301,80 +301,82 @@ class StickyNavigation {
 
 new StickyNavigation();
 
-function run(filename){
-	const toDataURL = url => fetch(url)
-	  .then(response => response.blob())
-	  .then(blob => new Promise((resolve, reject) => {
-		const reader = new FileReader()
-		reader.onloadend = () => resolve(reader.result)
-		reader.onerror = reject
-		reader.readAsDataURL(blob)
-	  }))
-  
+function run(filename, type){
+	const toDataURL = (url) => fetch(url)
+		.then(response => response.blob())
+		.then(blob => new Promise((resolve, reject) => {
+			const reader = new FileReader()
+			reader.onloadend = () => resolve(reader.result)
+			reader.onerror = reject
+			reader.readAsDataURL(blob)
+		}))
   
 	const url = 'images/'+filename;
-	console.log("url")
-	console.log(url)
-
+	console.log(type);
 	const data = toDataURL(url)
-	.then( dataUrl => {
-	  const body_data = {
-		"access_token" : "",
-		"image" : dataUrl.split(',')[1]
-	  }
-	  const json_data = {
-		method: 'POST',
-		body: body_data, // string or object
-	  }
+	.then((dataUrl) => {
+		console.log(type)
+		const body_data = {
+			"access_token" : "",
+			"image" : dataUrl.split(',')[1]
+		}
+		const json_data = {
+			method: 'POST',
+			body: body_data, // string or object
+		}
+
+		var api_url = "";
+		if(type === 0){
+			api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
+		}
+		else{
+			api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
+		}
   
-	  console.log(json_data)
-	//   const response = fetch("http://keti.asuscomm.com:32222/function/yonsei-imagestressrecognition-5", {
-	  const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
+		console.log(json_data)
+		// const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
+		const response = fetch(api_url, {
 		method: 'POST',
 		body: JSON.stringify(body_data), // string or object
-	  })
-	  .then((res) => res.json())
-	  .then((data) => {
-		  $("#result_value").text(JSON.stringify(data["return_stress"]));
-		  return data["return_stress"]
-		})
-		.then((data) => {
-			var divEl = $("#image");
-			var divX = divEl.offset().left;
-			var divY = divEl.offset().top;
-			var divW = divEl.width();
-			var divH = divEl.height();
-		console.log(divX);
-		console.log(divY);
-		console.log(divW);
-		console.log(divH);
+	})
+	.then((res) => res.json())
+	.then((data) => {
+		if(type===0){
+			$("#result_value").text(JSON.stringify(data["return_stress"]));
+			return data["return_stress"]
+		}
+		else{
+			$("#result_value").text(JSON.stringify(data["result"]));
+			return data["result"]
+		}
+	})
+	.then((data) => {
+		var divEl = $("#image");
+		var divX = divEl.offset().left;
+		var divY = divEl.offset().top;
+		var divW = divEl.width();
+		var divH = divEl.height();
+	console.log(divX);
+	console.log(divY);
+	console.log(divW);
+	console.log(divH);
 
-
-		//   $("#rect").append('<div class="object-rectangle" style="position: static; top:1889.5px; left:237.5px; width:10%; height:10%;"></div>');
-		//   $("#rect").append(`<div class="object-rectangle" style="top:$('divY')px; left:$('divX')px; width:$('divW')px; height:$('divH')px;"></div>`);
-		console.log(data["xmax"])
-		console.log(data["xmin"])
-		console.log(data["ymax"])
-		console.log(data["ymin"])
-		})
-		.then(url => {
-			$(".image").attr("src", "images/"+filename);
-		})
-	//   .then((res) => {
-
-	// 	// document.getElementById("readme").innerHTML='<iframe src="readme/stress.html" width="80%"></iframe>';
-	// 	console.log(res.json())
-	//   }
-	//   )
-	  // do something with myJson
+	// console.log(data["xmax"])
+	// console.log(data["xmin"])
+	// console.log(data["ymax"])
+	// console.log(data["ymin"])
+	})
+	.then(url => {
+		$(".image").attr("src", "images/"+filename);
+	})
 	});
   }
 
-function run_url(img_url){
+function run_url(img_url, type){
   
 	const dataUrl = img_url;
-	console.log("url")
-	console.log(dataUrl)
+	console.log("url");
+	console.log(dataUrl);
 
 	const body_data = {
 	"access_token" : "",
@@ -386,7 +388,14 @@ function run_url(img_url){
 	}
 
 	console.log(json_data)
-	const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
+	const api_url = "";
+	if(type === 0){
+		api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
+	}
+	else{
+		api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
+	}
+	const response = fetch(api_url, {
 	method: 'POST',
 	body: JSON.stringify(body_data), // string or object
 	})
@@ -406,7 +415,22 @@ function run_url(img_url){
 	$(".image").attr("src", dataUrl);
 }
 
-$(".img-button").click(function(){
+$(".img-button-stress").click(function(){
+	const id = $(this).attr("idundefined");
+	var filename = "";
+	if(id === "img1"){
+		filename = "sample_image.png";
+	}
+	else if(id === "img2"){
+		filename = "1.jpg";
+	}
+	else if(id === "img3"){
+		filename = "2.jpg";
+	}
+	run(filename, 0);
+})
+
+$(".img-button-emotion").click(function(){
 	const id = $(this).attr("id");
 	var filename = "";
 	if(id === "img1"){
@@ -418,13 +442,19 @@ $(".img-button").click(function(){
 	else if(id === "img3"){
 		filename = "2.jpg";
 	}
-	run(filename);
+	run(filename, 1);
 })
 
 
-$(".img-url-button").click(function(){
+$(".img-url-button-stress").click(function(){
 	const val= $("#img-url").val()
-	run_url(val);
+	run_url(val, 0);
+})
+
+$(".img-url-button-emotion").click(function(){
+	const val= $("#img-url").val()
+	console.log(val)
+	run_url(val, 1);
 })
 
 function drawRect(x, y, w, h){
