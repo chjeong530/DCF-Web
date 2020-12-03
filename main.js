@@ -220,12 +220,17 @@ function changePage(clicked_id){
 		img.show()
 		</code></pre><p><strong>(실행 결과)</strong></p>
 		<p><img src="images/face_detection.png" alt="face_detection" class="readme-image"></p>
-		`
+		`;
+	}
+	else{
+		const readme = document.querySelector("#readme");
+		readme.innerHTML=`<h1>준 비 중</h1>`;
 	}
 
 	window.scrollTo(0,0);
 }
 
+changePage("stress");
 
 
 class StickyNavigation {
@@ -332,10 +337,12 @@ function run(filename, type){
 
 		var api_url = "";
 		if(type === 0){
-			api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
+			// api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
+			api_url = "http://keti.asuscomm.com:32222/function/yonsei-imagestressrecognition-5"
 		}
 		else{
-			api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
+			// api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
+			api_url = "http://keti.asuscomm.com:32222/function/kaist-videorecognition-4"
 		}
   
 		// console.log(json_data)
