@@ -1,109 +1,42 @@
-const conatiner = document.querySelector('.et-main');
-conatiner.innerHTML=
+const main_container = document.querySelector('.et-main');
+main_container.innerHTML=
 `
-	<section class="et-slide" id="tab-es6">
-<br>
-<br>
-<br>
-<br>
-<div class="header">
-	<div class="title">
-	<span class="spacer"></span>
-	</div>
-</div>
-<br>
-	<h1>모델 개요</h1>
-<br>
-<br>
-	<!-- <h3>something about es6</h3> -->
-	<div id="readme"></div>
-	</section>
-	<section class="et-slide" id="tab-flexbox">
-<br>
-<br>
-<br>
-<br>
-<div class="header">
-	<div class="title">
-	<span class="spacer"></span>
-	</div>
-</div>
-<br>
-	<h1>기능</h1>
-<br>
-<br>
-	<!-- <h3>something about flexbox</h3> -->
-	<item class="row items">
-		<div class="column preview">
-		<div class="demo-img-container">
-			<img src="images/sample_image.png" class="image" id="image"/>
-			<div id='rect'></div>
-		</div>
-		</div>
-		<div class="column preview">
-		<div class="demo-img-results">
-			<table class="no-boader" class="table">
-			<thead>
-				<tr class="table-header">
-				<th class="th-1"> 기능 </th>
-				<th class="th-2"> 값 </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-				<th id=> 결과  </th> 
-				<th id=result_value>  </th> 
-				</tr>
-			</tbody>
-			</table>
-		</div>
-		</div>
-	</item>
-	<item class="row list">
-		<br>
-		<br>
+<section class="et-slide" id="tab-es6">
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class="header">
 		<div class="title">
 		<span class="spacer"></span>
 		</div>
 	</div>
-		<div class="image_url">
-		<input type="text" id="img-url">
-		<input type="button" class="img-url-button-emotion" value="보내기">
+	<br>
+		<h1>모델 개요</h1>
+	<br>
+	<br>
+		<!-- <h3>something about es6</h3> -->
+		<div id="readme"></div>
+		</section>
+		<section class="et-slide" id="tab-flexbox">
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="header">
+		<div class="title">
+			<span class="spacer"></span>
 		</div>
-		<div class="image_list">
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img1">
-		</div>
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img2">
-		</div>
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img3">
-		</div>
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img4">
-		</div>
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img4">
-		</div>
-		<div class="crop_image">
-			<input type="button" class="img-button-emotion" id="img4">
-		</div>
-		</div>
-	</item>
-<br>
-<br>
-<br>
-<br>
-<div class="header">
-	<div class="title">
-	<span class="spacer"></span>
 	</div>
-</div>
-<br>
-	</section>
+
+	<br>
+		<h1>기능</h1>
+	<br>
+
+</section>
+
 `
+
 
 function changePage(clicked_id){
 	console.log(clicked_id);
@@ -111,7 +44,7 @@ function changePage(clicked_id){
 	if(clicked_id === "stress"){
 		const readme = document.querySelector("#readme");
 		readme.innerHTML=
-			`
+		`
 		<h1 id="-image-based-stress-recognition-api-">영상기반 스트레스 인식(Image Based Stress Recognition) API란?</h1>
 		<p>연세대학교에서 제공하는 OpenAPI이며, 사람 얼굴이 포함되어 있는 이미지를 입력으로 스트레스 인식 알고리즘이 예측한 사람의 스트레스 수준을 결과로 반환해주는 API입니다. 스트레스 수준은 스트레스 없음, 스트레스 약함, 스트레스 강함의 3단계로 구성되어 있습니다.</p>
 		<h2 id="-image-based-stress-recognition-">영상기반 스트레스 인식(Image Based Stress Recognition) 알고리즘이란?</h2>
@@ -221,10 +154,239 @@ function changePage(clicked_id){
 		</code></pre><p><strong>(실행 결과)</strong></p>
 		<p><img src="images/face_detection.png" alt="face_detection" class="readme-image"></p>
 		`;
+
+		const result_container = document.querySelector('.et-result');
+		result_container.innerHTML=
+		`
+		<section class="et-slide" id="tab-es6">
+			<br>
+			<!-- <h3>something about flexbox</h3> -->
+			<item class="row items">
+				<div class="column preview">
+				<div class="demo-img-container">
+					<img src="images/sample_image.png" class="image" id="image"/>
+					<div id='rect'></div>
+				</div>
+				</div>
+				<div class="column preview">
+				<div class="demo-img-results">
+					<table class="no-boader" class="table">
+					<thead>
+						<tr class="table-header">
+						<th class="th-1"> 기능 </th>
+						<th class="th-2"> 값 </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th id=> 결과  </th> 
+						<th id=result_value>  </th> 
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				</div>
+			</item>
+			<item class="row-list">
+				<br>
+				<br>
+				<div class="header">
+					<div class="title">
+						<span class="spacer"></span>
+					</div>
+				</div>
+				<div class="image_url">
+					image URL:
+					<input type="text" id="img-url">
+					<input type="button" onclick="img_url_button_stress()" value="보내기">
+				</div>
+				<div class="image_list">
+					<div class="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img1">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img2">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img3">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img4">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img4">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_stress(this.id)" id="img4">
+					</div>
+				</div>
+			</item>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="header">
+			<div class="title">
+				<span class="spacer"></span>
+			</div>
+			</div>
+			<br>
+		</section>
+		`
 	}
-	else{
+	else if(clicked_id === "recognition"){
 		const readme = document.querySelector("#readme");
-		readme.innerHTML=`<h1>준 비 중</h1>`;
+		readme.innerHTML=
+		`
+		<h1 id="영상-감정-인식-api란">영상 감정 인식 API란?</h1>
+		<p>KAIST에서 제공하는 OpenAPI이며, 이미지를 입력으로 1) 성별, 2) 나이, 3) 감정 예측결과를 반환해주는 API입니다.</p>
+		<h2 id="영상-감정-인식-api">영상 감정 인식 API</h2>
+		<h3 id="영상-감정-인식-api-호출">영상 감정 인식 API 호출</h3>
+		<p>영상감정인식 API의 호출은 API를 서비스하는 서버 주소와 객체 검출을 위한 인자 값이 필요하며, 샘플 이미지를 활용하여 API 호출하는 예는 다음과 같습니다.</p>
+		<p><strong>(샘플 이미지 - sample.jpg)</strong></p>
+		<div class="figure">
+		<img src="images/recognition.jpg" alt="Sample image"  class="readme-image"/><p class="caption">Sample image</p>
+		</div>
+		<p><strong>(영상 감정 인식 API 호출 예)</strong></p>
+		<pre><code>echo &#39;{&quot;access_token&quot;: [USER ACCESS TOKEN], &quot;image&quot;: &quot;&#39;&quot;$(base64 sample.jpg)&quot;&#39;&quot;}&#39; | curl -X POST -d @- &quot;http://keti.asuscomm.com:32222/function/kaist-videorecognition-4&quot;</code></pre>
+		<ul>
+		<li><p><code>kaist-videorecognition-4</code> 는 객체검출 API의 함수 이름입니다.</p></li>
+		<li><p><code>Arguments</code>: 영상 감정 인식 API 호출을 위한 JSON 포맷으로 표현된 인자 값으로, OpenAPI 인증 토큰과 객체검출 대상의 이미지 데이터로 구성됩니다.</p></li>
+		<li><p>OpenAPI 인증 토큰(<code>access_token</code>): 디지털 동반자 페이지(추후 링크 게시 예정)에서 발급받은 문자열 타입의 사용자 토큰값</p></li>
+		<li><p>이미지 데이터(<code>image</code>): 객체검출 대상의 이미지를 Base64로 인코딩된 문자열</p>
+		<blockquote>
+		<p><code>&quot;'&quot;$(base64 sample.jpg)&quot;'&quot;</code>: <code>sample.jpg</code>라는 이름의 이미지를 base64 명령어를 사용하여 Base64로 인코딩한 값입니다.</p>
+		</blockquote>
+		<blockquote>
+		<p>Base64는 0~256 사이의 부호없는 정수값(binary 데이터)을 ASCII code로 인코딩(맵핑)하는 방식을 말합니다. 자세한 정보는 <a href="[https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%8A%A464](https://ko.wikipedia.org/wiki/베이스64)">여기</a>를 참조하세요.</p>
+		</blockquote>
+		<blockquote>
+		<p><a href="https://www.base64-image.de/">online page that translate image to base64 (encoding)</a></p>
+		</blockquote></li>
+		</ul>
+		<h3 id="영상-감정-인식-api-반환">영상 감정 인식 API 반환</h3>
+		<p>영상 감정 인식 API는 API의 정상작동 여부, 디버깅 메세지, 성별, 나이, 감정 정보를 JSON 포맷으로 반환합니다. 성별, 나이, 감정 정보는 확률값, 속성 정보로 구성됩니다.</p>
+		<p><strong>(영상 감정 인식 API 반환결과 예시)</strong></p>
+		<pre class="sourceCode json"><code class="sourceCode json">{
+			<span class="dt">&quot;result&quot;</span>:{
+				<span class="dt">&quot;gender&quot;</span>:{
+					<span class="dt">&quot;probability&quot;</span>:<span class="st">&quot;0.52606&quot;</span>,
+					<span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;Female&quot;</span>
+				},
+				<span class="dt">&quot;age&quot;</span>:{
+					<span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;20&quot;</span>
+				},
+				<span class="dt">&quot;emotion&quot;</span>:{
+					<span class="dt">&quot;probability&quot;</span>:<span class="st">&quot;0.1908229&quot;</span>,
+					<span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;Neutral&quot;</span>
+				}
+			},
+			<span class="dt">&quot;response&quot;</span>:<span class="st">&quot;success&quot;</span>,
+			<span class="dt">&quot;dev_msg&quot;</span>:<span class="st">&quot;&quot;</span>
+		}</code></pre>
+		<ul>
+		<li><p>API 정상작동 여부(<code>response</code>): 호출된 객체 API의 상태 정보 확인을 위한 값으로 문자열로 표기됩니다</p></li>
+		<li><p>디버깅 메세지(<code>dev_msg</code>): 호출된 객체 API에 대한 디버깅 메세지로 문자열로 표기됩니다.</p></li>
+		<li><p>성별, 나이, 감정 정보(<code>result</code>): 정보들이 JSON 포맷으로 표기됩니다.</p></li>
+		<li><p>성별 정보(<code>gender</code>)</p>
+		<ul>
+		<li>예측결과(<code>prediction</code>)</li>
+		</ul>
+		<p>남성 혹은 여성에 대한 정보로써 Female, Male로 구분됩니다.</p>
+		<ul>
+		<li>확률값(<code>probability</code>)</li>
+		</ul>
+		<p>예측결과에 대한 신뢰도를 나타냅니다.</p></li>
+		<li><p>나이 정보(<code>age</code>)</p>
+		<ul>
+		<li>예측결과(<code>prediction</code>)</li>
+		</ul>
+		<p>0부터 100사이의 값의 예측한 나이값을 나타냅니다.</p></li>
+		<li><p>감정 정보(<code>emotion</code>)</p>
+		<ul>
+		<li>예측결과(<code>prediction</code>)</li>
+		</ul>
+		<p>감정 정보로써 화(<code>Anger</code>), 역겨움(<code>Disgust</code>), 공포(<code>Fear</code>), 행복(<code>Happiness</code>), 평안함(<code>Neutral</code>), 슬픔(<code>Sadness</code>), 놀람(<code>Surprise</code>)으로 구분됩니다.</p></li>
+		</ul>
+		`
+		const result_container = document.querySelector('.et-result');
+		result_container.innerHTML=
+		`
+		<section class="et-slide" id="tab-es6">
+			<br>
+			<!-- <h3>something about flexbox</h3> -->
+			<item class="row items">
+				<div class="column preview">
+				<div class="demo-img-container">
+					<img src="images/sample_image.png" class="image" id="image"/>
+					<div id='rect'></div>
+				</div>
+				</div>
+				<div class="column preview">
+				<div class="demo-img-results">
+					<table class="no-boader" class="table">
+					<thead>
+						<tr class="table-header">
+						<th class="th-1"> 기능 </th>
+						<th class="th-2"> 값 </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<th id=> 결과  </th> 
+						<th id=result_value>  </th> 
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				</div>
+			</item>
+			<item class="row-list">
+				<br>
+				<br>
+				<div class="header">
+					<div class="title">
+						<span class="spacer"></span>
+					</div>
+				</div>
+				<div class="image_url">
+					image URL:
+					<input type="text" id="img-url">
+					<input type="button" onclick="img_url_button_emotion()" value="보내기">
+				</div>
+				<div class="image_list">
+					<div class="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img1">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img2">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img3">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img4">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img4">
+					</div>
+					<div onclick="crop_image">
+						<input type="button" onclick="img_button_emotion(this.id)" id="img4">
+					</div>
+				</div>
+			</item>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="header">
+			<div class="title">
+				<span class="spacer"></span>
+			</div>
+			</div>
+			<br>
+		</section>
+		`
 	}
 	else if(clicked_id === "korean-style-transform"){
 		const readme = document.querySelector("#readme");
@@ -235,7 +397,7 @@ function changePage(clicked_id){
 		<h2 id="어체-변환style-transfer-알고리즘이란">어체 변환(Style Transfer) 알고리즘이란?</h2>
 		<p>아래 그림과 같이 한국어 문장을 입력으로 받아 지정한 어체의 문장을 생성하는 알고리즘입니다.</p>
 		<div class="figure">
-		<img src="images/style_transfer.png" alt="Object Detection" /><p class="caption">Object Detection</p>
+		<img src="images/style_transfer.png" alt="Object Detection"  class="readme-image"/><p class="caption">Object Detection</p>
 		</div>
 		<h2 id="다중-어체-변환-api-사용">다중 어체 변환 API 사용</h2>
 		<h3 id="다중-어체-변환-api-호출">다중 어체 변환 API 호출</h3>
@@ -270,11 +432,59 @@ function changePage(clicked_id){
 		<li><p><code>tranfer_sent</code>: 지정한 어체로 변환한 출력 문장입니다.</p></li>
 		</ul>
 		`
+		const result_container = document.querySelector('.et-result');
+		result_container.innerHTML=
+		`
+		<section class="et-slide" id="tab-es6">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		
+			<select id='lang-type'>
+				<option value=''>-- 타입 선택 --</option>
+				<option value='yo' label='해요체'>해요체</option>
+				<option value='sho' label='합쇼체'>합쇼체</option>
+				<option value='ban' label='반말체'>반말체</option>
+			</select>
+
+			<div class="input-text">
+				내용 : &nbsp;
+				<input type="text" size=60% id="text-contents">
+				&nbsp;
+				<input type="button" size=20% onclick=text_contents_send() value="보내기">
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<div class="input-text">
+				결과 : &nbsp;
+				<input type="text" size=67% id="result-text-contents">
+			</div>
+
+
+			<br>
+			<br>
+			<div class="header">
+			<div class="title">
+				<span class="spacer"></span>
+			</div>
+			</div>
+			<br>
+		</section>
+		`
+	}
+	else{
+		const readme = document.querySelector("#readme");
+		readme.innerHTML=`<h1>준 비 중</h1>`;
+	}
 
 	window.scrollTo(0,0);
 }
 
-changePage("stress");
+// changePage("stress");
 
 
 class StickyNavigation {
@@ -355,7 +565,7 @@ class StickyNavigation {
 
 // new StickyNavigation();
 
-function run(filename, type){
+function run_image(filename, type){
 	const toDataURL = (url) => fetch(url)
 		.then(response => response.blob())
 		.then(blob => new Promise((resolve, reject) => {
@@ -370,33 +580,181 @@ function run(filename, type){
 	const data = toDataURL(url)
 	.then((dataUrl) => {
 		console.log(type)
-		const body_data = {
-			"access_token" : "",
-			"image" : dataUrl.split(',')[1]
-		}
-		const json_data = {
-			method: 'POST',
-			body: body_data, // string or object
-		}
 
 		var api_url = "";
 		if(type === 0){
 			// api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
 			api_url = "http://keti.asuscomm.com:32222/function/yonsei-imagestressrecognition-5"
+			const body_data = {
+				"access_token" : "",
+				"image" : dataUrl.split(',')[1]
+			}
+			const json_data = {
+				method: 'POST',
+				body: body_data, // string or object
+			}
 		}
-		else{
+		else if(type === 1){
 			// api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
 			api_url = "http://keti.asuscomm.com:32222/function/kaist-videorecognition-4"
+			const body_data = {
+				"access_token" : "",
+				"image" : dataUrl.split(',')[1]
+			}
+			const json_data = {
+				method: 'POST',
+				body: body_data, // string or object
+			}
 		}
+
   
 		// console.log(json_data)
 		// const response = fetch("http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5", {
 		const response = fetch(api_url, {
 		method: 'POST',
 		body: JSON.stringify(body_data), // string or object
+		})
+		.then((res) => res.json())
+		.then((data) => {
+			if(type===0){
+				$("#result_value").text(JSON.stringify(data["return_stress"]));
+				console.log(data)
+				const result_value = document.querySelector('#result_value');
+				result_value.innerHTML=
+				`{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"stress_level":"${data["return_stress"]["stress_level"]}"<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"no_stress_confidence":"${data["return_stress"]["no_stress_confidence"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"weak_stress_confidence":"${data["return_stress"]["weak_stress_confidence"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"strong_stress_confidence":"${data["return_stress"]["strong_stress_confidence"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"xmin":"${data["return_stress"]["xmin"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"ymin":"${data["return_stress"]["ymin"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"xmax":"${data["return_stress"]["xmax"]},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"ymax":"${data["return_stress"]["ymax"]},<br>
+				}
+				`
+
+				return data["return_stress"]
+			}
+			else{
+				$("#result_value").text(JSON.stringify(data["result"]));
+				const result_value = document.querySelector('#result_value');
+				result_value.innerHTML=
+				`{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"gender":{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"probability":"${data["result"]["gender"]["probability"]}}},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prediction":"${data["result"]["gender"]["prediction"]}}},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"age":{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"predicition":"${data["result"]["age"]["predicition"]}}},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;"emotion":{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"probability":"${data["result"]["emotion"]["probability"]}}},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prediction":"${data["result"]["emotion"]["prediction"]}}},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+				}
+				`
+
+				return data["result"]
+			}
+		})
+		.then((data) => {
+			// var divEl = $("#image");
+			// console.log(divEl);
+			// var divX = divEl.width() * data["xmin"];
+			// var divY = divEl.height() * data["ymin"];
+			// var divW = divEl.width() * (data["xmax"] - data["xmin"]);
+			// var divH = divEl.height() * (data["ymax"] - data["ymin"]);
+
+			// // var target = document.getElementById("image");
+			// // var targetRect = target.getBoundingClientRect();
+			// // console.log(targetRect["x"])
+			// // console.log(targetRect)
+
+
+			// // var pdivX = targetRect["x"];
+			// // var pdivY = targetRect["y"];
+			// // var pdivW = targetRect["width"];
+			// // var pdivH = targetRect["height"]
+			// // var pdivX = targetRect["x"] + data["xmin"];
+			// // var pdivY = targetRect["y"] + data["ymin"];
+			// // var pdivW = divX + data["xmax"];
+			// // var pdivH = divY + data["ymax"];
+			// console.log(divX);
+			// console.log(divY);
+			// console.log(divW);
+			// console.log(divH);
+
+			// // var pdivW = 
+			// // var pdivH = 
+
+			// const face_rect = document.querySelector('.rect');
+			// face_rect.innerHTML=
+			// `
+			// <div class="face_rect" id="face_rect" style="top:${divX}px; left:${divY}px; width:${divW}px; height:${divH}px;">
+			// </div>
+			// `
+			// `
+			// <div class="face_rect" id="face_rect" style="top:0px; left:0px; width:10px; height:50px;">
+			// </div>
+			// `
+
+
+
+		// console.log(data["xmax"])
+		// console.log(data["xmin"])
+		// console.log(data["ymax"])
+		// console.log(data["ymin"])
+		})
+		.then(url => {
+			$(".image").attr("src", "images/"+filename);
+		})
+		.catch(error => {
+			alert(error);
+
+		})
+	});
+  }
+
+function run_image_url(img_url, type){
+  
+	const dataUrl = img_url;
+	console.log("url");
+	console.log(dataUrl);
+
+	const body_data = {
+	"access_token" : "",
+	"image" : dataUrl.split(',')[1]
+	}
+	const json_data = {
+	method: 'POST',
+	body: body_data, // string or object
+	}
+
+	console.log(json_data)
+	const api_url = "";
+	if(type === 0){
+		// api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
+		api_url = "http://keti.asuscomm.com:32222/function/yonsei-imagestressrecognition-5"
+	}
+	else{
+		// api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
+		api_url = "http://keti.asuscomm.com:32222/function/kaist-videorecognition-4"
+	}
+	const response = fetch(api_url, {
+	method: 'POST',
+	body: JSON.stringify(body_data), // string or object
 	})
 	.then((res) => res.json())
 	.then((data) => {
+		$("#result_value").text(JSON.stringify(data["return_stress"]));
+	})
+	.then((data) => {
+
+		// console.log(data["return_stress"]["xmax"])
+		// console.log(data["return_stress"]["xmin"])
+		// console.log(data["return_stress"]["ymax"])
+		// console.log(data["return_stress"]["ymin"])
+
 		if(type===0){
 			$("#result_value").text(JSON.stringify(data["return_stress"]));
 			console.log(data)
@@ -438,181 +796,104 @@ function run(filename, type){
 			return data["result"]
 		}
 	})
-	.then((data) => {
-		// var divEl = $("#image");
-		// console.log(divEl);
-		// var divX = divEl.width() * data["xmin"];
-		// var divY = divEl.height() * data["ymin"];
-		// var divW = divEl.width() * (data["xmax"] - data["xmin"]);
-		// var divH = divEl.height() * (data["ymax"] - data["ymin"]);
-
-		// // var target = document.getElementById("image");
-		// // var targetRect = target.getBoundingClientRect();
-		// // console.log(targetRect["x"])
-		// // console.log(targetRect)
-
-
-		// // var pdivX = targetRect["x"];
-		// // var pdivY = targetRect["y"];
-		// // var pdivW = targetRect["width"];
-		// // var pdivH = targetRect["height"]
-		// // var pdivX = targetRect["x"] + data["xmin"];
-		// // var pdivY = targetRect["y"] + data["ymin"];
-		// // var pdivW = divX + data["xmax"];
-		// // var pdivH = divY + data["ymax"];
-		// console.log(divX);
-		// console.log(divY);
-		// console.log(divW);
-		// console.log(divH);
-
-		// // var pdivW = 
-		// // var pdivH = 
-
-		// const face_rect = document.querySelector('.rect');
-		// face_rect.innerHTML=
-		// `
-		// <div class="face_rect" id="face_rect" style="top:${divX}px; left:${divY}px; width:${divW}px; height:${divH}px;">
-		// </div>
-		// `
-		// `
-		// <div class="face_rect" id="face_rect" style="top:0px; left:0px; width:10px; height:50px;">
-		// </div>
-		// `
-
-
-
-	// console.log(data["xmax"])
-	// console.log(data["xmin"])
-	// console.log(data["ymax"])
-	// console.log(data["ymin"])
-	})
-	.then(url => {
-		$(".image").attr("src", "images/"+filename);
-	})
-	});
-  }
-
-function run_url(img_url, type){
-  
-	const dataUrl = img_url;
-	console.log("url");
-	console.log(dataUrl);
-
-	const body_data = {
-	"access_token" : "",
-	"image" : dataUrl.split(',')[1]
-	}
-	const json_data = {
-	method: 'POST',
-	body: body_data, // string or object
-	}
-
-	console.log(json_data)
-	const api_url = "";
-	if(type === 0){
-		api_url = "http://10.0.7.1:32222/function/yonsei-imagestressrecognition-5"
-	}
-	else{
-		api_url = "http://10.0.7.1:32222/function/kaist-videorecognition-4"
-	}
-	const response = fetch(api_url, {
-	method: 'POST',
-	body: JSON.stringify(body_data), // string or object
-	})
-	.then((res) => res.json())
-	.then((data) => {
-		$("#result_value").text(JSON.stringify(data["return_stress"]));
-	})
-	.then((data) => {
-
-		console.log(data["return_stress"]["xmax"])
-		console.log(data["return_stress"]["xmin"])
-		console.log(data["return_stress"]["ymax"])
-		console.log(data["return_stress"]["ymin"])
-	})
 
 	console.log(dataUrl);
 	$(".image").attr("src", dataUrl);
 }
 
-$(".img-button-stress").click(function(){
-	const id = $(this).attr("id");
+function run_text(type, text){
+	console.log(type);
+	console.log(text);
+
+	var api_url = "";
+	// api_url = "http://10.0.7.1:32222/function/sgu-korean-style-transfer-1"
+	api_url = "http://keti.asuscomm.com:32222/function/sgu-korean-style-transfer-1"
+	const body_data = {
+		"access_token" : "",
+		"input_text" : text,
+		"target_style" : type
+	}
+	const json_data = {
+		method: 'POST',
+		body: body_data, // string or object
+	}
+
+	console.log(body_data);
+
+	const response = fetch(api_url, {
+		method: 'POST',
+		body: JSON.stringify(body_data), // string or object
+	})
+	.then((res) => res.json())
+	.then((data) => {
+		var type_index = document.getElementById("result-text-contents").textContent=""
+		return data["return_stress"]
+	})
+	.catch(error => {
+		alert(error);
+
+	});
+}
+// $(".img-button-stress").click(function(){
+function img_button_stress(clicked_id) {
 	var filename = "";
-	if(id === "img1"){
+	if(clicked_id === "img1"){
 		filename = "sample_image.png";
 	}
-	else if(id === "img2"){
+	else if(clicked_id === "img2"){
 		filename = "1.jpg";
 	}
-	else if(id === "img3"){
+	else if(clicked_id === "img3"){
 		filename = "2.jpg";
 	}
-	run(filename, 0);
-})
-
-$(".img-button-emotion").click(function(){
-	const id = $(this).attr("id");
-	var filename = "";
-	if(id === "img1"){
-		filename = "sample_image.png";
-	}
-	else if(id === "img2"){
-		filename = "1.jpg";
-	}
-	else if(id === "img3"){
-		filename = "2.jpg";
-	}
-	run(filename, 1);
-})
-
-
-$(".img-url-button-stress").click(function(){
-	const val= $("#img-url").val()
-	run_url(val, 0);
-})
-
-$(".img-url-button-emotion").click(function(){
-	const val= $("#img-url").val()
-	console.log(val)
-	run_url(val, 1);
-})
-
-function sendImgFile(sOriginImgUrl){
-	var arSplitUrl   = sOriginImgUrl.split("\\");    //   "/" 로 전체 url 을 나눈다
-	var nArLength     = arSplitUrl.length;
-	var arFileName         = arSplitUrl[nArLength-1];   // 나누어진 배열의 맨 끝이 파일명이다
-	console.log(arFileName)
-
-	run(arFileName, 1);
+	run_image(filename, 0);
 }
 
+// $(".img-button-emotion").click(function(){
+function img_button_emotion(clicked_id) {
+	const id = $(this).attr("id"); var filename = ""; if(id === "img1"){ filename = "sample_image.png"; } else if(id === "img2"){ filename = "1.jpg"; } else if(id === "img3"){ filename = "2.jpg"; } run_image(filename, 1); } 
+
+// $(".img-url-button-stress").click(function(){
+function img_url_button_stress() {
+	const val= $("#img-url").val()
+	if(val === ""){
+		alert('URL이 비어있습니다.');
+	}
+	run_image_url(val, 0);
+}
+
+// $(".img-url-button-emotion").click(function(){
+function img_url_button_emotion() {
+	const val= $("#img-url").val()
+	if(val === ""){
+		alert('URL이 비어있습니다.');
+	}
+	run_image_url(val, 1);
+}
+
+// $("text-contents-send").click(function(){
+function text_contents_send(){
+	var type_index = document.getElementById("lang-type").options.selectedIndex;
+	var lang_type = document.getElementById("lang-type").options[type_index].value;
+	var input_text = document.getElementById("text-contents").value;
+
+	console.log(type_index);
+	if(type_index === 0){
+		alert("타입을 선택해 주세요.");
+	}
+	else if(input_text === ""){
+		alert("내용을 입력해 주세요.");
+	}
+	else{
+		console.log(lang_type);
+		console.log(input_text);
+		run_text(lang_type, input_text);
+	}
+
+}
 
 
 function drawRect(x, y, w, h){
 	const container = document.querySelector('.items');
 	// container.innerHTML = 
 }
-
-
-// var canvas = document.getElementById('image_canvas')
-// var context = document.getElementById('image_canvas').getContext('2d')
-// var img = new Image();
-// img.src = "images/sample_image.png";
-// console.log(img.width)
-// console.log(img.height)
-// img.onload=function(){
-// 	scaleToFit(this);
-// 	// context.drawImage(img, 0, 0, img.width, img.height) 
-// }
-
-// function scaleToFit(img){
-//     // get the scale
-// 	var scale = Math.min(canvas.width / img.width, canvas.height / img.height);
-	
-//     // get the top left position of the image
-//     var x = (canvas.width) - (img.width ) * scale;
-// 	var y = (canvas.height ) - (img.height ) * scale;
-
-// 	context.clearRect(0, 0, canvas.width, canvas.height); //clear html5 canvas
-//     context.drawImage(img, 0, 0, img.width * scale, img.height * scale);
-// }

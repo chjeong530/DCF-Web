@@ -221,9 +221,12 @@ iframe {
 
 .image_list {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  width: 1000px;
+  /* flex-direction: row; */
+  justify-content: center;
+}
+
+#img-url {
+  width: 50vw;
 }
 
 .object-rectangle {
@@ -239,8 +242,8 @@ iframe {
   border-style: solid;
   border-color: black;
   margin: 20px;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   cursor: pointer;
 }
 
@@ -251,8 +254,8 @@ iframe {
   border-style: solid;
   border-color: black;
   margin: 20px;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   cursor: pointer;
 }
 
@@ -263,8 +266,8 @@ iframe {
   border-style: solid;
   border-color: black;
   margin: 20px;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   cursor: pointer;
 }
 
@@ -275,8 +278,8 @@ iframe {
   border-style: solid;
   border-color: black;
   margin: 20px;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   cursor: pointer;
 }
 
@@ -295,15 +298,23 @@ iframe {
   .demo-img-container {
     width: 100%;
     /* height: 50%; */
+    max-width: 600px;
+    height: auto;
+    border: 0;
   }
   
   .demo-img-results {
-    height: 400px;
+    /* height: 400px; */
     overflow: auto;
     width: 100%;
     /* background-color: #f4f5f6; */
+
     background-color: #eee;
     border: 1px #747479 solid;
+
+    max-width: 600px;
+    height: 360px;
+    /* background-color: #f4f5f6; */
   }
   canvas {
     height: 100%;
@@ -342,18 +353,6 @@ iframe {
       /* font-weight: lighter; */
   }
   
-  .demo-img-container {
-    max-width: 600px;
-    height: auto;
-    border: 0;
-  }
-  
-  .demo-img-results {
-    max-width: 600px;
-    height: 360px;
-    background-color: #f4f5f6;
-  }
-  
   .image {
     max-width: 100%;
   }
@@ -374,13 +373,13 @@ iframe {
   }
   
   .row {
-    max-width: none;
+    max-width: 90vw;
     margin-left: -.9375rem;
     margin-right: -.9375rem;
   }
 
 .readme-image {
-  width: 40vw;
+  width: 60vw;
 }
 
 #readme {
@@ -395,4 +394,17 @@ iframe {
 
 .demo-img-container {
   position: relative;
+}
+
+.img-button-emotion {
+  max-width: 100%;
+}
+
+.input-text {
+  display: flex;
+  max-width: 80vw;
+  align-items: center;
+  /* align-content: center; */
+  /* justify-items: center; */
+  justify-content: center;
 }

@@ -1,0 +1,70 @@
+<h1 id="영상-감정-인식-api란">영상 감정 인식 API란?</h1>
+<p>KAIST에서 제공하는 OpenAPI이며, 이미지를 입력으로 1) 성별, 2) 나이, 3) 감정 예측결과를 반환해주는 API입니다.</p>
+<h2 id="영상-감정-인식-api">영상 감정 인식 API</h2>
+<h3 id="영상-감정-인식-api-호출">영상 감정 인식 API 호출</h3>
+<p>영상감정인식 API의 호출은 API를 서비스하는 서버 주소와 객체 검출을 위한 인자 값이 필요하며, 샘플 이미지를 활용하여 API 호출하는 예는 다음과 같습니다.</p>
+<p><strong>(샘플 이미지 - sample.jpg)</strong></p>
+<div class="figure">
+<img src="images/sample.jpg" alt="Sample image" /><p class="caption">Sample image</p>
+</div>
+<p><strong>(영상 감정 인식 API 호출 예)</strong></p>
+<pre><code>echo &#39;{&quot;access_token&quot;: [USER ACCESS TOKEN], &quot;image&quot;: &quot;&#39;&quot;$(base64 sample.jpg)&quot;&#39;&quot;}&#39; | curl -X POST -d @- &quot;http://keti.asuscomm.com:32222/function/kaist-videorecognition-4&quot;</code></pre>
+<ul>
+<li><p><code>kaist-videorecognition-4</code> 는 객체검출 API의 함수 이름입니다.</p></li>
+<li><p><code>Arguments</code>: 영상 감정 인식 API 호출을 위한 JSON 포맷으로 표현된 인자 값으로, OpenAPI 인증 토큰과 객체검출 대상의 이미지 데이터로 구성됩니다.</p></li>
+<li><p>OpenAPI 인증 토큰(<code>access_token</code>): 디지털 동반자 페이지(추후 링크 게시 예정)에서 발급받은 문자열 타입의 사용자 토큰값</p></li>
+<li><p>이미지 데이터(<code>image</code>): 객체검출 대상의 이미지를 Base64로 인코딩된 문자열</p>
+<blockquote>
+<p><code>&quot;'&quot;$(base64 sample.jpg)&quot;'&quot;</code>: <code>sample.jpg</code>라는 이름의 이미지를 base64 명령어를 사용하여 Base64로 인코딩한 값입니다.</p>
+</blockquote>
+<blockquote>
+<p>Base64는 0~256 사이의 부호없는 정수값(binary 데이터)을 ASCII code로 인코딩(맵핑)하는 방식을 말합니다. 자세한 정보는 <a href="[https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%8A%A464](https://ko.wikipedia.org/wiki/베이스64)">여기</a>를 참조하세요.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.base64-image.de/">online page that translate image to base64 (encoding)</a></p>
+</blockquote></li>
+</ul>
+<h3 id="영상-감정-인식-api-반환">영상 감정 인식 API 반환</h3>
+<p>영상 감정 인식 API는 API의 정상작동 여부, 디버깅 메세지, 성별, 나이, 감정 정보를 JSON 포맷으로 반환합니다. 성별, 나이, 감정 정보는 확률값, 속성 정보로 구성됩니다.</p>
+<p><strong>(영상 감정 인식 API 반환결과 예시)</strong></p>
+<pre class="sourceCode json"><code class="sourceCode json">{
+    <span class="dt">&quot;result&quot;</span>:{
+        <span class="dt">&quot;gender&quot;</span>:{
+            <span class="dt">&quot;probability&quot;</span>:<span class="st">&quot;0.52606&quot;</span>,
+            <span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;Female&quot;</span>
+         },
+        <span class="dt">&quot;age&quot;</span>:{
+            <span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;20&quot;</span>
+        },
+        <span class="dt">&quot;emotion&quot;</span>:{
+            <span class="dt">&quot;probability&quot;</span>:<span class="st">&quot;0.1908229&quot;</span>,
+            <span class="dt">&quot;prediction&quot;</span>:<span class="st">&quot;Neutral&quot;</span>
+        }
+    },
+    <span class="dt">&quot;response&quot;</span>:<span class="st">&quot;success&quot;</span>,
+    <span class="dt">&quot;dev_msg&quot;</span>:<span class="st">&quot;&quot;</span>
+}</code></pre>
+<ul>
+<li><p>API 정상작동 여부(<code>response</code>): 호출된 객체 API의 상태 정보 확인을 위한 값으로 문자열로 표기됩니다</p></li>
+<li><p>디버깅 메세지(<code>dev_msg</code>): 호출된 객체 API에 대한 디버깅 메세지로 문자열로 표기됩니다.</p></li>
+<li><p>성별, 나이, 감정 정보(<code>result</code>): 정보들이 JSON 포맷으로 표기됩니다.</p></li>
+<li><p>성별 정보(<code>gender</code>)</p>
+<ul>
+<li>예측결과(<code>prediction</code>)</li>
+</ul>
+<p>남성 혹은 여성에 대한 정보로써 Female, Male로 구분됩니다.</p>
+<ul>
+<li>확률값(<code>probability</code>)</li>
+</ul>
+<p>예측결과에 대한 신뢰도를 나타냅니다.</p></li>
+<li><p>나이 정보(<code>age</code>)</p>
+<ul>
+<li>예측결과(<code>prediction</code>)</li>
+</ul>
+<p>0부터 100사이의 값의 예측한 나이값을 나타냅니다.</p></li>
+<li><p>감정 정보(<code>emotion</code>)</p>
+<ul>
+<li>예측결과(<code>prediction</code>)</li>
+</ul>
+<p>감정 정보로써 화(<code>Anger</code>), 역겨움(<code>Disgust</code>), 공포(<code>Fear</code>), 행복(<code>Happiness</code>), 평안함(<code>Neutral</code>), 슬픔(<code>Sadness</code>), 놀람(<code>Surprise</code>)으로 구분됩니다.</p></li>
+</ul>
