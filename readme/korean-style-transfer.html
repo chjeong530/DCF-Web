@@ -1,0 +1,39 @@
+<h1 id="한국어-다중-어체-변환style-transfer-for-korean-language-api란">한국어 다중 어체 변환(Style Transfer for Korean Language) API란?</h1>
+<p>서강대 자연어처리 연구실에서 개발한 OpenAPI이며, 다양한 어체(해요체, 합쇼체, 반말체)의 문장을 입력으로 받아 지정한 어체로 변환해주는 API입니다.</p>
+<h2 id="어체-변환style-transfer-알고리즘이란">어체 변환(Style Transfer) 알고리즘이란?</h2>
+<p>아래 그림과 같이 한국어 문장을 입력으로 받아 지정한 어체의 문장을 생성하는 알고리즘입니다.</p>
+<div class="figure">
+<img src="images/style_transfer.png" alt="Object Detection" /><p class="caption">Object Detection</p>
+</div>
+<h2 id="다중-어체-변환-api-사용">다중 어체 변환 API 사용</h2>
+<h3 id="다중-어체-변환-api-호출">다중 어체 변환 API 호출</h3>
+<p>다중 어체 변환 API의 호출은 API를 서비스하는 서버 주소, 입력 문장과 변환 대상 어체 인자 값이 필요하며, API 호출하는 예는 다음과 같습니다.</p>
+<p><strong>(다중 어체 변환 API 호출 예)</strong></p>
+<pre><code>echo &#39;{access_token&quot;: [USER ACCESS TOKEN], &quot;input_text&quot;:&quot;안녕.\n좋은 하루 보내.&quot;, &quot;target_style&quot;:&quot;yo&quot;}&#39; | curl -X POST -d @- &quot;http://keti.asuscomm.com:32222/function/sgu-korean-style-transfer-1&quot;</code></pre>
+<ul>
+<li><p><code>sgu-korean-style-transfer-1</code> 는 다중 어체 변환 API의 함수 이름입니다.</p></li>
+<li><p><code>Arguments</code>: 다중 어체 변환 API 호출을 위한 JSON 포맷으로 표현된 인자 값으로, OpenAPI 인증 토큰과 입력 문장 및 변환 대상 어체 구분자로 구성됩니다.</p></li>
+<li><p>OpenAPI 인증 토큰(<code>access_token</code>): 디지털 동반자 페이지(추후 링크 게시 예정)에서 발급받은 문자열 타입의 사용자 토큰값</p></li>
+<li><p><code>input_text</code>: 어체 변환을 진행하고자 하는 한국어 문장이고 UTF-8 문자열로 인코딩되어야 합니다.</p>
+<blockquote>
+<p>문장간 경계는 줄 바꿈 형태, 즉 &quot;&quot; 형태의 문자열로 입력되어야 합니다.</p>
+</blockquote></li>
+<li><p><code>target_style</code>: 변환 대상 어체를 나타내는 대상 어체 구분자입니다. 현재 다음과 같은 3개 어체 변환을 지원합니다.</p>
+<blockquote>
+<p>&quot;yo&quot;: 해요체 (예: 좋은 하루 보내세요.)</p>
+</blockquote>
+<blockquote>
+<p>&quot;sho&quot;: 합쇼체 (예: 좋은 하루 보내십시오.)</p>
+</blockquote>
+<blockquote>
+<p>&quot;ban&quot;: 반말체 (예: 좋은 하루 보내.)</p>
+</blockquote></li>
+</ul>
+<h3 id="다중-어체-변환-api-반환">다중 어체 변환 API 반환</h3>
+<p>다중 어체 변환 API는 어체 변환 결과를 JSON 포맷으로 반환합니다.</p>
+<p><strong>(다중 어체 변환 API 반환결과 예시)</strong></p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="er">&quot;</span>{<span class="er">&#39;input_sent&#39;</span>: <span class="er">&#39;안녕.\n좋은</span> <span class="er">하루</span> <span class="er">보내.&#39;</span>, <span class="er">&#39;tranfer_sent&#39;</span>: <span class="er">&#39;안녕하</span><span class="dv">세</span><span class="er">요.\n좋은</span> <span class="er">하루</span> <span class="er">보내</span><span class="dv">세</span><span class="er">요.&#39;</span>}<span class="er">&quot;</span></code></pre>
+<ul>
+<li><p><code>input_sent</code>: 어체 변환을 위한 입력 문장입니다.</p></li>
+<li><p><code>tranfer_sent</code>: 지정한 어체로 변환한 출력 문장입니다.</p></li>
+</ul>
