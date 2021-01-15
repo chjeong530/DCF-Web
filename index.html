@@ -4,104 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="index.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Document</title>
 </head>
 <body>
-  <!-- <div class="header">
-    <div class="tab_wrap">
-      <div class="tab_menu_container">
-        <button class="tab_menu_btn on" type="button">채치수</button>
-        <button class="tab_menu_btn" type="button">강백호</button>
-        <button class="tab_menu_btn" type="button">서태웅</button>
-        <button class="tab_menu_btn" type="button">송태섭</button>
-        <button class="tab_menu_btn" type="button">정대만</button>
-        <button class="tab_menu_btn" type="button">권준호</button>
-        <button class="tab_menu_btn" type="button">양호열</button>
+  <!-- Hero -->
+  <section class="et-hero-tabs">
+    <h1>KETI DIGITAL COMPANION FRAMEWORK</h1>
+    <h3>KETI Deep Learning API</h3>
+  </section>
+    
+  <div class="et-hero-tabs-container">
+    <!-- <div id="menu-wrapper">
+      <div class="container" id="menu" >
+        <ul>
+          <li class="current_page_item"><a href="#">STRESS</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>  -->
+    <!-- <a class="et-hero-tab" href="#tab-es6">STRESS</a> -->
+    <button class="et-hero-tab" id="stress" onclick=changePage(this.id)>STRESS</button>
+    <!-- <a class="et-hero-tab" href="#tab-flexbox">인식</a> -->
+    <button class="et-hero-tab" id="recognition" onclick=changePage(this.id) >RECOGNITION</button>
+    <button class="et-hero-tab" id="korean-style-transform" onclick=changePage(this.id) >KOREAN STYLE TRANSFORM</button>
+    <button class="et-hero-tab" id="2" onclick=changePage(this.id) >BLANK</button>
+    <button class="et-hero-tab" id="3" onclick=changePage(this.id) >BLANK</button>
+    <button class="et-hero-tab" id="4" onclick=changePage(this.id) >BLANK</button>
+    <!-- <a class="et-hero-tab" href="#tab-es6">모델 개요</a> -->
+    <!-- <a class="et-hero-tab" href="#tab-flexbox">기능</a> -->
+    <span class="et-hero-tab-slider"></span>
+  </div>
+
+  <!-- Main -->
+  <main class="et-main" id=main>
+
+  </main>
+
+  <result class="et-result" id=result>
+
+    <section class="et-slide" id="tab-es6">
+      
+
+    <br>
+    <br>
+    <div class="header">
+      <div class="title">
+        <span class="spacer"></span>
       </div>
     </div>
-  </div>
-
-
-  <div class="tab_box_container">
-    <div class="tab_box on"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>br><br>고릴라 주장</div>
-    <div class="tab_box">빨간 원숭이</div>
-    <div class="tab_box">농구천재</div>
-    <div class="tab_box">북산의 돌격대장</div>
-    <div class="tab_box">돌아온 풍운아</div>
-    <div class="tab_box">식스맨</div>
-    <div class="tab_box">사실 작중 제일 멋쟁이</div> -->
-
-      <item class="row items">
-        <div class="column preview">
-          <div class="demo-img-container">
-            <img src="images/sample_image.png" class="image" />
-          </div>
-        </div>
-
-        <div class="column preview">
-          <div class="demo-img-results">
-            <table class="no-boader" class="table">
-              <thead>
-                <tr>
-                  <th class="th-1"> 기능 이름: </th>
-                  <th> value </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-                <tr>
-                  <th> 개체 </th> 
-                  <th> abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz </th> 
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </item>
-
-
-      <item class="row list">
-        <div class="image_list">
-          <div class="crop_image">
-            <input type="button" class="img-button">
-          </div>
-          <div class="crop_image">
-            <input type="button" class="nothing">
-          </div>
-        </div>
-
-      </item>
-    </div>
-  </div>
-
-
-
-
-  <div class="footer">
-    <div class="footer_logo">nothing</div>
-  </div>
-
-  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </section>
+  </result>
 </body>
-</html>
+</html>   
