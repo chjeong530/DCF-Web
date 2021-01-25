@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <script src="index.js" defer></script>
+  <script src="readme.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Document</title>
 </head>
@@ -16,30 +17,53 @@
   </section>
     
   <div class="et-hero-tabs-container">
-    <!-- <div id="menu-wrapper">
-      <div class="container" id="menu" >
-        <ul>
-          <li class="current_page_item"><a href="#">STRESS</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
-    </div>  -->
-    <!-- <a class="et-hero-tab" href="#tab-es6">STRESS</a> -->
+
     <button class="et-hero-tab" id="stress" onclick=changePage(this.id)>STRESS</button>
-    <!-- <a class="et-hero-tab" href="#tab-flexbox">인식</a> -->
     <button class="et-hero-tab" id="recognition" onclick=changePage(this.id) >RECOGNITION</button>
     <button class="et-hero-tab" id="korean-style-transform" onclick=changePage(this.id) >KOREAN STYLE TRANSFORM</button>
-    <button class="et-hero-tab" id="2" onclick=changePage(this.id) >BLANK</button>
-    <button class="et-hero-tab" id="3" onclick=changePage(this.id) >BLANK</button>
-    <button class="et-hero-tab" id="4" onclick=changePage(this.id) >BLANK</button>
-    <!-- <a class="et-hero-tab" href="#tab-es6">모델 개요</a> -->
-    <!-- <a class="et-hero-tab" href="#tab-flexbox">기능</a> -->
+    <button class="et-hero-tab" id="facial-emotion-expression" onclick=changePage(this.id) >FACIAL EMOTION EXPRESSION</button>
+    <button class="et-hero-tab" id="multi-captioning" onclick=changePage(this.id) >MULTI-CAPTIONING</button>
+    <button class="et-hero-tab" id="intent-classifier" onclick=changePage(this.id) >INTENT CLASSIFIER</button>
+    <button class="et-hero-tab" id="intent-classifier" onclick=changePage(this.id) >INTENT CLASSIFIER</button>
     <span class="et-hero-tab-slider"></span>
+
   </div>
 
   <!-- Main -->
   <main class="et-main" id=main>
+<section class="et-slide" id="tab-es6">
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="header">
+		<div class="title">
+		<span class="spacer"></span>
+		</div>
+	</div>
+	<br>
+		<h1>모델 개요</h1>
+	<br>
+	<br>
+		<!-- <h3>something about es6</h3> -->
+		<div id="readme"></div>
+		</section>
+		<section class="et-slide" id="tab-flexbox">
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="header">
+		<div class="title">
+			<span class="spacer"></span>
+		</div>
+	</div>
 
+	<br>
+		<h1>기능</h1>
+	<br>
+
+</section>
   </main>
 
   <result class="et-result" id=result>

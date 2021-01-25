@@ -110,7 +110,7 @@ span.spacer:after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 30vh;
 
     background: #eee;
     text-align: center;
@@ -283,6 +283,18 @@ iframe {
   cursor: pointer;
 }
 
+#caption-sample {
+  background: url("images/multi-captioning-input.jpg") no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  width: 10vw;
+  height: 10vw;
+  cursor: pointer;
+}
+
 
 @media screen and (min-width: 48em){
     .preview{
@@ -407,4 +419,12 @@ iframe {
   /* align-content: center; */
   /* justify-items: center; */
   justify-content: center;
+}
+
+
+#input-text-contents {
+  width: 40%;
+}
+#result-text-area {
+  width: 46%;
 }
