@@ -81,31 +81,22 @@ function changePage(clicked_id){
 		<h3 id="1-api-">1. 영상기반 스트레스 인식 API 에러 코드</h3>
 		<p>영상기반 스트레스 인식 API 출력 인터페이스에 정의된 &quot;dev_code&quot;에 대한 정의입니다. 영상기반 스트레스 인식 API의 응답에서 &quot;dev_code&quot;의 상태값을 보고 사용자는 영상기반 스트레스 인식 API가 요청에 정상적으로 응답했는지 확인할 수 있으며, 잘못된 응답을 받았을 때, 어떤 것이 잘못되었는지 알 수 있습니다.</p>
 		<table>
-		<thead>
-		<tr>
-		<th>dev_code</th>
-		<th>Description</th>
-		</tr>
-		</thead>
-		<tbody>			<div class="input-text">
-        내용 : &nbsp;
-        <input type="text" size=60% id="text-contents">
-        &nbsp;
-        <input type="button" size=20% onclick=text_contents_send() value="보내기">
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div class="input-text">
-        결과 : &nbsp;
-        <input type="text" size=67% id="result-text-contents">
-    </div>
-
-		<td>0</td>
-		<td>이미지 로드 실패</td>
-		</tr>
-		</tbody>
+        <thead>
+        <tr>
+        <th>dev_code</th>
+        <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>1</td>
+        <td>요청 성공</td>
+        </tr>
+        <tr>
+        <td>0</td>
+        <td>이미지 로드 실패</td>
+        </tr>
+        </tbody>
 		</table>
 		<h3 id="2-api-">2. 영상기반 스트레스 인식 API의 클래스 정보</h3>
 		<p>영상기반 스트레스 인식 API는 스트레스 인식을 위해 연세대학교에서 자체적으로 취득한 데이터셋을 사용합니다. 해당 데이터셋은 20~30대 남녀 50명에 대해 취득하였으며, 총 200만장의 비디오 프레임으로 구성되어 있습니다. 데이터셋 취득 실험의 시나리오는 스트레스를 유발하지 않는 단계, 약한 스트레스를 유발하는 단계, 강한 스트레스를 유발하는 단계 등으로 구성되어 있었고 스트레스를 유발하지 않는 단계, 약한 스트레스를 유발하는 단계, 강한 스트레스를 유발하는 단계에서 취득한 데이터를 각각 스트레스 없음, 스트레스 약함, 스트레스 강함으로 라벨링하였습니다.</p>
@@ -134,7 +125,7 @@ function changePage(clicked_id){
 			<item class="row items">
 				<div class="column preview">
 				<div class="demo-img-container">
-					<img src="images/sample_image.png" class="image" id="image"/>
+					<img src="images/sample_image.png" class="readme-image" id="image"/>
 					<div id='rect'></div>
 				</div>
 				</div>
@@ -423,7 +414,7 @@ function changePage(clicked_id){
 				내용 : &nbsp;
 				<input type="text" size=60% id="text-contents">
 				&nbsp;
-				<input type="button" size=20% onclick=text_contents_send() value="보내기">
+				<input type="button" size=20% onclick=send_text_contents() value="보내기">
 				<br>
 				<br>
 				<br>
@@ -453,7 +444,7 @@ function changePage(clicked_id){
 <p>본 API는 여섯 가지 감정 세기, 발화 텍스트, 발화 타이밍 정보, 오디오, 성별을 입력으로 받아 애니메이션 시계열 데이터를 xml 형태로 반환해주는 API입니다.</p>
 <h2 id="-">감정기반 표정/입 생성 알고리즘이란?</h2>
 <p>감정기반 표정/입 생성 알고리즘은 감정 세기, 발화 텍스트, 발화 타이밍 정보, 오디오, 성별을 입력으로 받아 이에 부합하는 표정 및 입모양 애니메이션을 생성하는 알고리즘입니다.</p>
-<p><img src="images/animation.jpg" alt="animation"></p>
+<p><img src="images/animation.jpg" alt="animation" class="readme-image"></p>
 <h2 id="-api-">감정기반 표정/입 생성 API 사용</h2>
 <h3 id="-api-">감정기반 표정/입 생성 API 호출</h3>
 <p><strong>(감정기반 표정/입 생성 API 호출 예)</strong></p>
@@ -531,7 +522,7 @@ function changePage(clicked_id){
 </ul>
 </li>
 </ul>
-<h3 id="-animation-images-animation-jpg-"><img src="images/animation.jpg" alt="animation"></h3>
+<h3 id="-animation-images-animation-jpg-"><img src="images/animation.jpg" alt="animation" class="readme-image"></h3>
 `
 		const result_container = document.querySelector('.et-result');
 		result_container.innerHTML=

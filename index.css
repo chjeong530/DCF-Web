@@ -353,7 +353,7 @@ iframe {
     border-bottom: 2px solid #eaebec;
     padding-bottom: 10px;
     width: 100px;
-  }
+  }`
   .th-2 {
     border-bottom: 2px solid #eaebec;
     padding-bottom: 10px;
@@ -427,4 +427,5 @@ iframe {
 }
 #result-text-area {
   width: 46%;
+  height: 300px;
 }

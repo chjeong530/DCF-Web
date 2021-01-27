@@ -442,12 +442,11 @@ function run_image_caption(filename, type){
   }
 
 function run_text(type, text){
-	console.log(type);
-	console.log(text);
 
 	var api_url = "";
 	// api_url = "http://10.0.7.1:32222/function/sgu-korean-style-transfer-1"
-	api_url = "http://keti.asuscomm.com:32222/function/sgu-style-transfer-1"
+	api_url = "http://keti.asuscomm.com:32222/function/sgu-korean-style-transfer-1"
+
 	const body_data = {
 		"access_token" : "",
 		"input_text" : text,
@@ -466,7 +465,10 @@ function run_text(type, text){
 	})
 	.then((res) => res.json())
 	.then((data) => {
-		var type_index = document.getElementById("result-text-contents").textContent=""
+		console.log(data["transfer_sent"])
+		var type_index = document.getElementById("result-text-contents")
+		// const result_value = document.querySelector('#result_value');
+		type_index.value=`${data["transfer_sent"].trim()}`
 		return data["return_stress"]
 	})
 	.catch(error => {
@@ -589,7 +591,7 @@ function send_text_contents(){
 		alert("내용을 입력해 주세요.");
 	}
 	else{
-		console.loddg(lang_type);
+		console.log(lang_type);
 		console.log(input_text);
 		run_text(lang_type, input_text);
 	}
