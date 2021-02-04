@@ -418,8 +418,13 @@ function run_image_caption(filename, type){
 			method: 'POST',
 			body: JSON.stringify(body_data) // string or object
 		})
-		.then((res) => res.json())
+		// .then((res) => res.json())
+		.then((res) => {
+			console.log(res);
+			return res.json();
+		})
 		.then((data) => {
+			console.log(data)
 			$("#result_value").text(JSON.stringify(data["result"]));
 			// console.log(data)
 			// const result_value = document.querySelector('#result_value');
@@ -472,6 +477,56 @@ function run_text(type, text){
 		return data["return_stress"]
 	})
 	.catch(error => {
+		alert(error);
+
+	});
+}
+
+function run_facial_emotion_expression(){
+
+	var api_url = "";
+	api_url = "http://keti.asuscomm.com:32222/function/kaist-facialemotionexpression-4"
+
+	const body_data = {
+		"sentence_jaso":"/dcf/handler/src/test_input/1GJCeQzy.txt", 
+		"sentence_neural_timing": 
+		"/dcf/handler/src/test_input/1GJCeQzy.npy", 
+		"sentence_audio_wav":"/dcf/handler/src/test_input/1GJCeQzy.wav", 
+		"speaker_gender": "30001", 
+		"emotion_strength":{
+			"10001": 0.0, 
+			"10002": 0.0, 
+			"10003": 0.0, 
+			"10004": 0.0, 
+			"10006": 0.0, 
+			"10007": 0.0 
+		}, 
+		"access_token" : "[USER ACCESS TOKEN]"
+	}
+	const json_data = {
+		method: 'POST',
+		body: body_data, // string or object
+	}
+
+	console.log(json_data);
+
+	const response = fetch(api_url, {
+		method: 'POST',
+		// body: body_data, // string or object
+		body: JSON.stringify(body_data), // string or object
+	})
+	.then((res) => (res.text()))
+	.then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+	.then((data) => {
+		console.log(data)
+		xmlString = (new XMLSerializer()).serializeToString(data);
+		var type_index = document.getElementById("result-text-area");
+		type_index.innerHTML = `${xmlString}`
+		// const result_value = document.querySelector('#result_value');
+		return xmlString
+	})
+	.catch(error => {
+		console.log(error);
 		alert(error);
 
 	});
@@ -575,6 +630,10 @@ function img_url_button_multi_caption() {
 		alert('URL이 비어있습니다.');
 	}
 	run_image_url(val, 2);
+}
+
+function send_facial_emotion_expression(){
+	run_facial_emotion_expression();
 }
 
 // $("text-contents-send").click(function(){

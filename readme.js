@@ -529,9 +529,21 @@ function changePage(clicked_id){
 		`
 		<section class="et-slide" id="tab-es6">
 			<br>
-			<br>
-			<br>
-			<h1>준비중</h1>
+			<div class="input-text">
+				<!-- 내용 : &nbsp; -->
+				<!-- <input type="text" id="input-text-contents"> -->
+				<!-- <input type="text" size=60% id="input-text-contents"> -->
+				&nbsp;
+				<input type="button" onclick=send_facial_emotion_expression() value="보내기">
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<div class="input-text">
+                결과 : &nbsp;
+                <textarea id="result-text-area"></textarea>
+			</div>
 			<br>
 			<br>
 			<div class="header">
